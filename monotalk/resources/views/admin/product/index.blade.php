@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Content -->
-<div id="page-wrapper">
+<div id="page-wrapper" class="abs">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -16,7 +16,6 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                 <tr align="center">
@@ -26,34 +25,40 @@
                     <th>Brand</th>
                     <th>Category</th>
                     <th>Price</th>
-                    <th>Nổi bật</th>
-                    <th>Số lượng</th>
-                    <th>Sửa</th>
+                    <th>Quantity</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                @if(!$products->isEmpty())
+                    <tbody>
                     @foreach($products as $p)
                         <tr class="odd gradeX" align="center">
-                            <td><img src="{{$p->image}}" alt="" style="width: 100px; height: 100px; object-fit: cover;"></td>
+                            <td><img src="{{asset($p->image)}}" alt="{{$p->name}}" style="width: 100px; height: 100px; object-fit: cover;"></td>
                             <td>{{$p->id}}</td>
                             <td>{{$p->name}}</td>
-                            <td>{{$p->Brand->name}}</td>
-                            <td>{{$p->Category->name}}</td>
-                            <td>{{$p->noibat}}</td>
-                            <td>{{$p->soluong}}</td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('category.edit', ['id' => $c->id])}}">Sửa</a></td>
+                            <td>{{$p->brand->name}}</td>
+                            <td>{{$p->category == null ? 'không có danh mục' : $p->category->name}}</td>
+                            <td>{{$p->price}}</td>
+                            <td>{{$p->quantity}}</td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('product.edit', ['id' => $p->id])}}">Edit</a></td>
                             <td class="center delete"><i class="fa fa-trash-o  fa-fw"></i>
-                                <form action="{{route('category.destroy', ['id' => $c->id])}}" method="POST">
+                                <form action="{{route('category.destroy', ['id' => $p->id])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" onclick="return window.confirm('Do you want to delete?')" class="btn btn-danger" value="Xóa">
+                                    <input type="submit" onclick="return window.confirm('Do you want to delete?')" class="btn btn-danger" value="Delete">
                                 </form>
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
+                    </tbody>
+                @else
+                    <p>chưa có sản phẩm</p>
+                @endif
             </table>
+        </div>
+        <div class="pagination">
+            {{$products->appends($_GET)->links()}}
         </div>
         <!-- /.row -->
     </div>

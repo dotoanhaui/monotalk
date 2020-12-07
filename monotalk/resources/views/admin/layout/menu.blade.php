@@ -1,6 +1,6 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
-        <ul class="nav" id="side-menu">
+        <ul class="nav ab" id="side-menu">
             <li >
                 <a class="color-fix"><i class="fa fa-bar-chart-o fa-fw"></i>Category<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -9,18 +9,6 @@
                     </li>
                     <li>
                         <a class="color-fix" href="{{route('category.create')}}">Add</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a class="color-fix"><i class="fa fa-sliders"></i> Slide<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a class="color-fix" href="admin/slide/danhsach">List</a>
-                    </li>
-                    <li>
-                        <a class="color-fix" href="admin/slide/them">Add</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -45,6 +33,54 @@
                     </li>
                     <li>
                         <a class="color-fix" href="{{route('product.create')}}">Add</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a class="color-fix"><i class="fa fa-sliders"></i> Attribute<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a class="color-fix" href="{{route('attribute.index')}}">List</a>
+                    </li>
+                    <li>
+                        <a class="color-fix" href="{{route('attribute.create')}}">Add</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a class="color-fix"><i class="fa fa-sliders"></i>Color<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a class="color-fix" href="{{route('color.index')}}">List</a>
+                    </li>
+                    <li>
+                        <a class="color-fix" href="{{route('color.create')}}">Add</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a class="color-fix"><i class="fa fa-sliders"></i>Size<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a class="color-fix" href="{{route('size.index')}}">List</a>
+                    </li>
+                    <li>
+                        <a class="color-fix" href="{{route('size.create')}}">Add</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a class="color-fix"><i class="fa fa-sliders"></i>Child Product<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a class="color-fix" href="{{route('child_product.index')}}">List</a>
+                    </li>
+                    <li>
+                        <a class="color-fix" href="{{route('child_product.create')}}">Add</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

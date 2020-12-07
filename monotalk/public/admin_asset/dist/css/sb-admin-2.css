@@ -354,7 +354,7 @@ table.dataTable thead .sorting:after {
 }
 
 tbody .center.delete{
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
 }
@@ -362,4 +362,19 @@ tbody .center.delete .btn-danger{
     background: transparent;
     color: #ff8100 !important;
     border: none;
+}
+.gradeX label{
+    background: #ff8100 !important;
+    padding: 5px;
+    margin-left: 5px;
+}
+#side-menu{
+    transition: all .6s;
+    transform: translateX(-250px);
+}
+.ab{
+    position: absolute;
+}
+.abs{
+    margin: 0 !important;
 }

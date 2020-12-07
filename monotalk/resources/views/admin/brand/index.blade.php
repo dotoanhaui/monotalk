@@ -46,6 +46,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="pagination">
+                {{$brands->appends($_GET)->links()}}
+            </div>
             <!-- /.row -->
         </div>
         <!-- /.container-fluid -->

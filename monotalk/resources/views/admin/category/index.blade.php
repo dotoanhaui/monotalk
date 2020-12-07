@@ -31,18 +31,21 @@
                         <tr class="odd gradeX" align="center">
                             <td>{{$c->id}}</td>
                             <td>{{$c->name}}</td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('category.edit', ['id' => $c->id])}}">Sửa</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('category.edit', ['id' => $c->id])}}">Edit</a></td>
                             <td class="center delete"><i class="fa fa-trash-o  fa-fw"></i>
                                 <form action="{{route('category.destroy', ['id' => $c->id])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" onclick="return window.confirm('Do you want to delete?')" class="btn btn-danger" value="Xóa">
+                                    <input type="submit" onclick="return window.confirm('Do you want to delete?')" class="btn btn-danger" value="Delete">
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="pagination">
+            {{$categories->appends($_GET)->links()}}
         </div>
         <!-- /.row -->
     </div>

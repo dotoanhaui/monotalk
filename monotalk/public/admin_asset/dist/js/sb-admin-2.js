@@ -1,7 +1,20 @@
 $(function() {
 
     $('#side-menu').metisMenu();
-
+    $('.navbar-brand').click(function () {
+        $(this).hide();
+        $('.fa-times').show();
+        $('#side-menu').css('transform','translateX(0)');
+        $('#side-menu').removeClass('ab');
+        $('#page-wrapper').removeClass('abs');
+    })
+    $('.fa-times').click(function () {
+        $(this).hide();
+        $('.navbar-brand').show();
+        $('#side-menu').css('transform','translateX(-250px)');
+        $('#side-menu').addClass('ab');
+        $('#page-wrapper').addClass('abs');
+    })
 });
 
 //Loads the correct sidebar on window load,

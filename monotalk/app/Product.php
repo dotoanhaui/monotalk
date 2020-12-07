@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public function brand(){
-        $this->belongsTo('App\Brand', 'brand_id');
+        return $this->belongsTo('App\Brand', 'brand_id');
     }
     public function category(){
-        $this->belongsTo('App\Category', 'category_id');
+        return $this->belongsTo('App\Category', 'category_id');
+    }
+    public function child_products(){
+        return $this->hasMany('App\ChildProduct', 'product_id');
     }
 }

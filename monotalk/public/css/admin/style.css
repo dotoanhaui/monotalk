@@ -1,0 +1,8 @@
+main nav {
+    display: flex;
+    justify-content: center;
+}
+
+main table tr td, tr th {
+    vertical-align: middle!important;
+}
